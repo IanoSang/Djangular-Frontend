@@ -9,6 +9,6 @@
 Movie Tittle <input type="text" [(ngModel)]="selectedMovie.title"  id="title"><br>
 Description <input type="text" [(ngModel)]="selectedMovie.desc" id="desc"><br>
 Year <input type="text" [(ngModel)]="selectedMovie.year"   id="year"><br>
-<button (click)="updateMovie()">PUT</button>
-<button (click)="createMovie()">POST</button>
-<button (click)="deleteMovie()">DELETE</button>
+<button *ngIf="selectedMovie.id != -1" (click)="updateMovie()">PUT</button>
+<button *ngIf="selectedMovie.id == -1"(click)="createMovie()">POST</button>
+<button *ngIf="selectedMovie.id != -1" (click)="deleteMovie()">DELETE</button>
