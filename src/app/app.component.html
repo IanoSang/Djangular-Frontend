@@ -1,9 +1,7 @@
 <h3>List of Movies</h3>
 <ul *ngIf="movies">
   <li *ngFor="let movie of movies">
-    <h4>{{movie.url}}</h4>
-    <h4>{{movie.title}}</h4>
-    <h4>{{movie.desc}}</h4>
-    <h4>{{movie.year}}</h4>
+    <h4 (click)="movieClicked(movie)">{{movie.title}}</h4>
+
   </li>
 </ul>
