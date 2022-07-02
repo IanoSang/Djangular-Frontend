@@ -5,3 +5,8 @@
 
   </li>
 </ul>
+<hr>
+Movie Tittle <input type="text" [(ngModel)]="selectedMovie.title"  id="title"><br>
+Description <input type="text" [(ngModel)]="selectedMovie.desc" id="desc"><br>
+Year <input type="text" [(ngModel)]="selectedMovie.year"   id="year"><br>
+<button (click)="updateMovie()">PUT</button>
