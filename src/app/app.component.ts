@@ -8,7 +8,7 @@ import {ApiService} from "./api.service";
   providers:[ApiService]
 })
 export class AppComponent {
-  movies = [{url:'testurl'},{title:'test'}, {desc:'test'}, {year:'2022'}];
+  movies = [{id:1},{url:'testurl'},{title:'test'}, {desc:'test'}, {year:'2022'}];
   constructor(private api:ApiService) {
     this.getMovies();
   }
@@ -22,5 +22,16 @@ export class AppComponent {
       }
     )
 
+  }
+  movieClicked = (movie:any)=>{
+    console.log(movie.id)
+    this.api.getOneMovies(movie.id).subscribe(
+      data => {
+        console.log(data)
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
 }
