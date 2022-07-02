@@ -38,9 +38,20 @@ export class AppComponent {
     )
   }
   updateMovie =() =>{
-    this.api.updateMovies(this.selectedMovie).subscribe(
+    this.api.updateMovie(this.selectedMovie).subscribe(
       data => {
         this.selectedMovie = data;
+
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+  createMovie =() =>{
+    this.api.createMovie(this.selectedMovie).subscribe(
+      data => {
+        this.movies.push(data);
 
       },
       error => {
